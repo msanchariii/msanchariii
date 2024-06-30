@@ -1,0 +1,76 @@
+Project Moda;
+import { Dialog, DialogTrigger, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+
+export default function Component() {
+  return (
+    <Dialog defaultOpen>
+      <DialogTrigger asChild>
+        <Button variant="outline">View Project</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[1200px]">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-2xl font-bold">Acme Web App</DialogTitle>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <img
+                src="/placeholder.svg"
+                width={400}
+                height={300}
+                alt="Project Image 1"
+                className="aspect-[4/3] w-full object-cover rounded-lg"
+              />
+              <img
+                src="/placeholder.svg"
+                width={400}
+                height={300}
+                alt="Project Image 2"
+                className="aspect-[4/3] w-full object-cover rounded-lg"
+              />
+              <img
+                src="/placeholder.svg"
+                width={400}
+                height={300}
+                alt="Project Image 3"
+                className="aspect-[4/3] w-full object-cover rounded-lg"
+              />
+              <img
+                src="/placeholder.svg"
+                width={400}
+                height={300}
+                alt="Project Image 4"
+                className="aspect-[4/3] w-full object-cover rounded-lg"
+              />
+            </div>
+          </div>
+          <div className="space-y-6">
+            <div className="prose">
+              <p>
+                The Acme Web App is a powerful and user-friendly platform that helps businesses streamline their online
+                presence. With a modern and responsive design, the app offers a range of features to enhance your
+                digital experience.
+              </p>
+              <p>
+                Key features include a customizable dashboard, intuitive content management system, and seamless
+                integration with popular third-party tools. The app is built on a robust technology stack, ensuring
+                reliable performance and scalability to meet the growing needs of your business.
+              </p>
+              <p>
+                Whether you're looking to build a new website, manage your online content, or optimize your digital
+                marketing efforts, the Acme Web App is the perfect solution to help you achieve your goals.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <p className="font-medium font-bold">Role:</p>
+              <p>Full-stack development</p>
+              <p className="font-medium">Technologies Used:</p>
+              <p>React, Next.js, Tailwind CSS, Node.js, MongoDB</p>
+            </div>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}

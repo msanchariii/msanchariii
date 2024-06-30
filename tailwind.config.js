@@ -17,7 +17,7 @@ module.exports = {
                 blue: "#497BFF",
                 cream: "#FFBC7F",
                 lime: "#d8fe85",
-                charrcoal: "#15161B",
+                charcoal: "#15161B",
                 gray: "#303030",
             },
             fontFamily: {
@@ -26,5 +26,4 @@ module.exports = {
             },
         },
     },
-    plugins: [],
 };

@@ -12,19 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <Head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link
-                    rel="preconnect"
-                    href="https://fonts.gstatic.com"
-                    crossorigin
-                />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-                    rel="stylesheet"
-                />
-            </Head>
+        <html lang="en" data_theme="night">
             <body className={inter.className}>
                 <Navbar />
                 {children}
