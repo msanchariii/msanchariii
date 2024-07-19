@@ -19,10 +19,7 @@ module.exports = {
                 lime: "#d8fe85",
                 charcoal: "#15161B",
                 gray: "#303030",
-            },
-            fontFamily: {
-                fredoka: ["Fredoka", "sans-serif"],
-                jost: ["Jost", "sans-serif"],
+                light: "#d9d9d9",
             },
         },
     },

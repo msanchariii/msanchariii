@@ -3,7 +3,7 @@ import React from "react";
 
 function Top() {
     return (
-        <div className="flex flex-col justify-evenly md:flex-row py-8 items-center ">
+        <div className="flex flex-col justify-evenly md:flex-row p-12 xl:p-24 items-center ">
             {/* left - picture */}
             <div className="min-w-96">
                 <div className="relative w-full max-w-[350px] mx-auto aspect-square">
