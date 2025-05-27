@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="flex space-x-6">
                     {/* Replace '#' with your actual social links */}
                     <a
-                        href="#"
+                        href="https://www.linkedin.com/in/msanchari/"
                         aria-label="LinkedIn"
                         className="text-gray-400 hover:text-purple-500 transition"
                         target="_blank"
@@ -29,7 +29,7 @@ const Footer = () => {
                     </a>
 
                     <a
-                        href="#"
+                        href="https://github.com/msanchariii/"
                         aria-label="GitHub"
                         className="text-gray-400 hover:text-purple-500 transition"
                         target="_blank"

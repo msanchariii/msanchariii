@@ -1,5 +1,7 @@
 // src/data/portfolioData.js
 
+const root = "/";
+
 const aboutMe = {
     intro: "Hey! I'm Sanchari Mandal, a passionate web developer who loves crafting clean, efficient, and beautiful digital experiences.",
     description:
@@ -7,52 +9,51 @@ const aboutMe = {
 };
 
 const skills = [
-    "HTML",
-    "CSS",
     "JavaScript",
     "React",
     "Next.js",
     "Node.js",
     "Express",
-    "Spring Boot",
-    "Java",
-    "Git",
+    "MongoDB",
+    "PostgreSQL",
+    "Docker",
+    "Git & GitHub",
+    // "Java",
 ];
 
 const projects = [
     {
-        title: "Personal Portfolio Website",
+        title: "Rustic Charm",
+        image: "/assets/images/rustic-charm.png",
         description:
             "A responsive portfolio built with React and Tailwind CSS to showcase my skills and projects.",
-        link: "https://github.com/sanchari/portfolio",
+        link: "https://msanchariii.github.io/rustic-charm/",
+        github: "https://github.com/msanchariii/rustic-charm",
     },
     {
-        title: "Task Manager App",
+        title: "Evolver",
+        image: "",
         description:
-            "A full-stack app with user authentication, task CRUD operations, and real-time updates.",
-        link: "https://github.com/sanchari/task-manager",
+            "An Online Exam Portal built with Next.js, Node.js, Prisma and PostgreSQL, featuring user authentication and authorization.",
+        link: "https://evolver.vercel.app/",
+        github: "https://github.com/sanchari/task-manager",
     },
     {
-        title: "Blog Platform",
+        title: "Organa",
+        image: "",
         description:
-            "A modern blogging platform built with Next.js, featuring markdown support and SEO optimization.",
-        link: "https://github.com/sanchari/blog-platform",
+            "A real time organ matching platform powered by AI. Won 2nd prize in Hackathon organized by GCECT and Bytemonk in 2025.",
+        github: "https://github.com/sanchari/blog-platform",
     },
 ];
 
 const education = [
     {
-        institution: "ABC University",
-        degree: "Bachelor of Technology in Computer Science",
-        duration: "2018 - 2022",
+        institution: "Government College og Engineering and Ceramic Technology",
+        degree: "Bachelor of Technology in Information Technology",
+        duration: "2022 - 2026",
         details:
             "Graduated with Honors, focused on software development and data structures.",
-    },
-    {
-        institution: "XYZ High School",
-        degree: "Higher Secondary Education",
-        duration: "2016 - 2018",
-        details: "Specialized in Science with Computer Applications.",
     },
 ];
 
