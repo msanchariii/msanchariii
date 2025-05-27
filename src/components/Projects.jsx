@@ -4,7 +4,7 @@ import { projects } from "@/data/portfolio.js"; // update your data to include '
 function Projects() {
     return (
         <section className="py-16 ">
-            <h3 className="text-3xl font-semibold mb-12 text-center text-white">
+            <h3 className="text-3xl font-semibold mb-16 text-center text-white">
                 Projects
             </h3>
             <div className="space-y-16 max-w-4xl mx-auto px-4">

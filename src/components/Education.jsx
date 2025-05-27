@@ -3,7 +3,7 @@ import { education } from "@/data/portfolio";
 const Education = () => {
     return (
         <section className="py-16  text-white max-w-screen-xl mx-auto px-6 md:px-12">
-            <h3 className="text-3xl font-semibold mb-12 text-center">
+            <h3 className="text-3xl font-semibold mb-16 text-center">
                 Education
             </h3>
             <div className="max-w-4xl mx-auto space-y-8">

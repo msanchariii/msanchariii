@@ -17,7 +17,7 @@ function HomePage() {
     return (
         <>
             <HeroBackground />
-            <div className="2xl:px-24 space-y-16  text-white max-w-screen-xl mx-auto px-6 md:px-12 xl:space-y-20">
+            <div className="2xl:px-24 space-y-16  text-white max-w-screen-xl mx-auto px-6 md:px-12 xl:space-y-40">
                 <Hero />
                 <About />
                 <Skills />

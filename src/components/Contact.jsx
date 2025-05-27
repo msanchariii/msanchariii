@@ -6,7 +6,7 @@ const Contact = () => (
             a friendly chat!
         </p>
         <a
-            href="mailto:sanchari@example.com"
+            href="mailto:sancharim2233@gmail.com"
             className="inline-block px-8 py-4 bg-purple-600 rounded-md text-white font-semibold hover:bg-purple-500 transition"
         >
             Email Me

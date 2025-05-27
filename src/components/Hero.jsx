@@ -4,19 +4,19 @@ function Hero() {
     return (
         <section className="py-10 md:py-16">
             <div className="container max-w-screen-xl mx-auto px-4">
-                <nav className="flex items-center justify-between mb-40">
+                <nav className="flex items-center justify-between mb-20">
                     {/* <img src="assets/image/navbar-logo.png" alt="Logo"> */}
                     <div className="bg-white h-12 aspect-square rounded-full"></div>
 
-                    <button className="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">
-                        Get my CV
+                    <button className="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-black text-md rounded-md  transition ease-linear duration-500">
+                        Get my Resume
                     </button>
                 </nav>
 
                 <div className="text-center">
                     <div className="flex justify-center mb-16">
                         {/* <img src="assets/image/home-img.png" alt="Image"> */}
-                        <div className="bg-white h-48 aspect-square rounded-full"></div>
+                        <div className="bg-white h-36 aspect-square rounded-full"></div>
                     </div>
 
                     <h1
@@ -35,9 +35,9 @@ function Hero() {
                         that make life easier for people.
                     </p>
 
-                    <button className="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-white/20 text-white text-sm rounded-md hover:bg-gray-50 hover:text-gray-700 transition ease-linear duration-500">
+                    {/* <button className="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-white/20 text-white text-sm rounded-md hover:bg-gray-50 hover:text-gray-700 transition ease-linear duration-500">
                         Hire me
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </section>

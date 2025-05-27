@@ -4,7 +4,7 @@ import React from "react";
 function Skills() {
     return (
         <div className="mb-24">
-            <h3 className="text-3xl font-semibold mb-8 text-center">Skills</h3>
+            <h3 className="text-3xl font-semibold mb-16 text-center">Skills</h3>
             <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
                 {skills.map((skill) => (
                     <span
