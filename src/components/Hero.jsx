@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 function Hero() {
     return (
@@ -8,9 +8,13 @@ function Hero() {
                     {/* <img src="assets/image/navbar-logo.png" alt="Logo"> */}
                     <div className="bg-white h-12 aspect-square rounded-full"></div>
 
-                    <button className="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-black text-md rounded-md  transition ease-linear duration-500">
+                    <a
+                        href="/resume/web.pdf"
+                        // download={true}
+                        className="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-black text-md rounded-md  transition ease-linear duration-500"
+                    >
                         Get my Resume
-                    </button>
+                    </a>
                 </nav>
 
                 <div className="text-center">
