@@ -3,6 +3,11 @@ import { useEffect } from "react";
 
 export default function Cursor() {
     useEffect(() => {
+        // Check for touch device
+        if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+            return; // Skip adding the cursor on touch devices
+        }
+
         const cursor = document.createElement("div");
         cursor.style.position = "fixed";
         cursor.style.top = "0";
