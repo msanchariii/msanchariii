@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className=" text-gray-400 py-8 px-6 md:px-12 text-center">
+        <footer className="relative z-[60] text-gray-400 py-8 px-6 md:px-12 text-center">
             <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
                 <p className="text-sm md:text-base">
                     &copy; {new Date().getFullYear()} Sanchari Mandal. All
