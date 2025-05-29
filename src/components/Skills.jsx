@@ -1,18 +1,146 @@
-import { skills } from "@/data/portfolio";
-import React from "react";
+"use client";
+import { sectionVariants } from "@/data/animation";
+import { motion } from "framer-motion";
+import {
+    FaReact,
+    FaHtml5,
+    FaCss3Alt,
+    FaNodeJs,
+    FaJava,
+    FaDocker,
+    FaAws,
+} from "react-icons/fa";
+import { SiKubernetes, SiPython } from "react-icons/si";
 
+const skills = {
+    frontend: [
+        {
+            name: "React",
+            icon: (
+                <FaReact
+                    className="inline-block mr-2 text-purple-400"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "HTML5",
+            icon: (
+                <FaHtml5
+                    className="inline-block mr-2 text-orange-500"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "CSS3",
+            icon: (
+                <FaCss3Alt
+                    className="inline-block mr-2 text-blue-500"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+    ],
+    backend: [
+        {
+            name: "Node.js",
+            icon: (
+                <FaNodeJs
+                    className="inline-block mr-2 text-green-500"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "Java",
+            icon: (
+                <FaJava
+                    className="inline-block mr-2 text-red-600"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "Python",
+            icon: (
+                <SiPython
+                    className="inline-block mr-2 text-yellow-400"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+    ],
+    devops: [
+        {
+            name: "Docker",
+            icon: (
+                <FaDocker
+                    className="inline-block mr-2 text-blue-600"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "AWS",
+            icon: (
+                <FaAws
+                    className="inline-block mr-2 text-orange-400"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "Kubernetes",
+            icon: (
+                <SiKubernetes
+                    className="inline-block mr-2 text-blue-700"
+                    size={28}
+                    strokeWidth={0.5}
+                />
+            ),
+        },
+    ],
+};
 function Skills() {
     return (
-        <div className="mb-24">
-            <h3 className="text-3xl font-semibold mb-16 text-center">Skills</h3>
-            <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-                {skills.map((skill) => (
-                    <span
-                        key={skill}
-                        className="bg-purple-700 bg-opacity-70 rounded-full px-5 py-2 text-white text-sm font-semibold hover:bg-purple-500 transition duration-300 cursor-default"
+        <div className="mb-24 max-w-5xl mx-auto px-4">
+            <h3 className="text-3xl font-semibold mb-16 text-center text-white">
+                Skills
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                {["frontend", "backend", "devops"].map((section) => (
+                    <motion.div
+                        key={section}
+                        className="bg-white/5 backdrop-blur-lg border border-white/20 ring-1 ring-white/10 rounded-lg shadow-lg p-6"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false }}
+                        variants={sectionVariants}
                     >
-                        {skill}
-                    </span>
+                        <h4 className="text-xl font-semibold mb-6 text-purple-400 capitalize">
+                            {section}
+                        </h4>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {skills[section].map(({ name, icon }) => (
+                                <span
+                                    key={name}
+                                    className="rounded-full px-2 py-2 text-white font-semibold cursor-default flex items-center gap-1 hover:scale-110 transition duration-300"
+                                >
+                                    {icon}
+                                    {name}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

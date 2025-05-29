@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Cursor from "@/components/Cursor";
+import StarsBackground from "@/components/StarBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +30,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" data_theme="night">
-            <body className={inter.className}>{children}</body>
+            <body className={inter.className}>
+                <div className="relative ">
+                    <Cursor />
+                    <StarsBackground />
+                    <main className="relative z-10">{children}</main>
+                </div>
+            </body>
         </html>
     );
 }

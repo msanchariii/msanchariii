@@ -10,8 +10,7 @@ function Hero() {
 
                     <a
                         href="/resume/web.pdf"
-                        // download={true}
-                        className="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-black text-md rounded-md  transition ease-linear duration-500"
+                        className="relative inline-block px-7 py-3 md:px-9 md:py-4 bg-white/90 backdrop-blur-lg border border-white/20 ring-1 ring-white/10 text-black font-semibold rounded-md overflow-hidden shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-purple-500/50 hover:ring-purple-400"
                     >
                         Get my Resume
                     </a>

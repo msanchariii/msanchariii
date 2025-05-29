@@ -1,4 +1,14 @@
 // src/data/portfolioData.js
+import {
+    FaReact,
+    FaHtml5,
+    FaCss3Alt,
+    FaNodeJs,
+    FaJava,
+    FaDocker,
+    FaAws,
+} from "react-icons/fa";
+import { SiKubernetes, SiPython } from "react-icons/si";
 
 const root = "/";
 
@@ -8,18 +18,51 @@ const aboutMe = {
         "I enjoy creating tools that make life easier and more enjoyable. I believe in continuous learning and collaboration.",
 };
 
-const skills = [
-    "JavaScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "PostgreSQL",
-    "Docker",
-    "Git & GitHub",
-    // "Java",
-];
+// In /data/portfolio.js
+const skills = {
+    frontend: [
+        {
+            name: "React",
+            icon: <FaReact className="inline-block mr-2 text-purple-400" />,
+        },
+        {
+            name: "HTML5",
+            icon: <FaHtml5 className="inline-block mr-2 text-orange-500" />,
+        },
+        {
+            name: "CSS3",
+            icon: <FaCss3Alt className="inline-block mr-2 text-blue-500" />,
+        },
+    ],
+    backend: [
+        {
+            name: "Node.js",
+            icon: <FaNodeJs className="inline-block mr-2 text-green-500" />,
+        },
+        {
+            name: "Java",
+            icon: <FaJava className="inline-block mr-2 text-red-600" />,
+        },
+        {
+            name: "Python",
+            icon: <SiPython className="inline-block mr-2 text-yellow-400" />,
+        },
+    ],
+    devops: [
+        {
+            name: "Docker",
+            icon: <FaDocker className="inline-block mr-2 text-blue-600" />,
+        },
+        {
+            name: "AWS",
+            icon: <FaAws className="inline-block mr-2 text-orange-400" />,
+        },
+        {
+            name: "Kubernetes",
+            icon: <SiKubernetes className="inline-block mr-2 text-blue-700" />,
+        },
+    ],
+};
 
 const projects = [
     {
@@ -32,7 +75,7 @@ const projects = [
     },
     {
         title: "Evolver",
-        image: "",
+        image: "/assets/images/evolver.png",
         description:
             "An Online Exam Portal built with Next.js, Node.js, Prisma and PostgreSQL, featuring user authentication and authorization.",
         link: "https://evolver.vercel.app/",
@@ -40,7 +83,7 @@ const projects = [
     },
     {
         title: "Organa",
-        image: "",
+        image: "/assets/images/organa.jpg",
         description:
             "A real time organ matching platform powered by AI. Won 2nd prize in Hackathon organized by GCECT and Bytemonk in 2025.",
         github: "https://github.com/sanchari/blog-platform",
@@ -89,4 +132,4 @@ const footer = {
     },
 };
 
-export { aboutMe, skills, projects, education, experience, footer };
+export { aboutMe, projects, education, experience, footer, skills };
