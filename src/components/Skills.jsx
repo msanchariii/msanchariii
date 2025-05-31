@@ -10,20 +10,20 @@ import {
     FaDocker,
     FaAws,
 } from "react-icons/fa";
-import { SiKubernetes, SiPython } from "react-icons/si";
+import {
+    SiExpress,
+    SiJavascript,
+    SiKubernetes,
+    SiMongodb,
+    SiNextdotjs,
+    SiPostgresql,
+    SiPrisma,
+    SiPython,
+    SiTailwindcss,
+} from "react-icons/si";
 
 const skills = {
     frontend: [
-        {
-            name: "React",
-            icon: (
-                <FaReact
-                    className="inline-block mr-2 text-purple-400"
-                    size={28}
-                    strokeWidth={2}
-                />
-            ),
-        },
         {
             name: "HTML5",
             icon: (
@@ -41,6 +41,46 @@ const skills = {
                     className="inline-block mr-2 text-blue-500"
                     size={28}
                     strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "Javascript",
+            icon: (
+                <SiJavascript
+                    className="inline-block mr-2 text-yellow-500"
+                    size={28}
+                    strokeWidth={0.5}
+                />
+            ),
+        },
+        {
+            name: "React",
+            icon: (
+                <FaReact
+                    className="inline-block mr-2 text-purple-400"
+                    size={28}
+                    strokeWidth={2}
+                />
+            ),
+        },
+        {
+            name: "Next.js",
+            icon: (
+                <SiNextdotjs
+                    className="inline-block mr-2 text-black"
+                    size={28}
+                    strokeWidth={0.5}
+                />
+            ),
+        },
+        {
+            name: "TailwindCSS",
+            icon: (
+                <SiTailwindcss
+                    className="inline-block mr-2 text-sky-400"
+                    size={28}
+                    strokeWidth={0.5}
                 />
             ),
         },
@@ -67,12 +107,42 @@ const skills = {
             ),
         },
         {
-            name: "Python",
+            name: "Express",
             icon: (
-                <SiPython
-                    className="inline-block mr-2 text-yellow-400"
+                <SiExpress
+                    className="inline-block mr-2 text-gray-700"
                     size={28}
-                    strokeWidth={2}
+                    strokeWidth={0.5}
+                />
+            ),
+        },
+        {
+            name: "Prisma",
+            icon: (
+                <SiPrisma
+                    className="inline-block mr-2 text-purple-600"
+                    size={28}
+                    strokeWidth={0.5}
+                />
+            ),
+        },
+        {
+            name: "MongoDB",
+            icon: (
+                <SiMongodb
+                    className="inline-block mr-2 text-green-700"
+                    size={28}
+                    strokeWidth={0.5}
+                />
+            ),
+        },
+        {
+            name: "PostgreSQL",
+            icon: (
+                <SiPostgresql
+                    className="inline-block mr-2 text-blue-600"
+                    size={28}
+                    strokeWidth={0.5}
                 />
             ),
         },
@@ -82,27 +152,27 @@ const skills = {
             name: "Docker",
             icon: (
                 <FaDocker
-                    className="inline-block mr-2 text-blue-600"
+                    className="inline-block mr-2 text-sky-400"
                     size={28}
                     strokeWidth={2}
                 />
             ),
         },
-        {
-            name: "AWS",
-            icon: (
-                <FaAws
-                    className="inline-block mr-2 text-orange-400"
-                    size={28}
-                    strokeWidth={2}
-                />
-            ),
-        },
+        // {
+        //     name: "AWS",
+        //     icon: (
+        //         <FaAws
+        //             className="inline-block mr-2 text-orange-400"
+        //             size={28}
+        //             strokeWidth={2}
+        //         />
+        //     ),
+        // },
         {
             name: "Kubernetes",
             icon: (
                 <SiKubernetes
-                    className="inline-block mr-2 text-blue-700"
+                    className="inline-block mr-2 text-blue-400"
                     size={28}
                     strokeWidth={0.5}
                 />
