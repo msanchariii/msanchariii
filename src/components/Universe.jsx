@@ -1,8 +1,10 @@
 "use client";
+import { useTheme } from "@/contexts/theme";
 import React, { useRef, useEffect } from "react";
 
 export default function Universe() {
     const canvasRef = useRef(null);
+    const { theme } = useTheme();
 
     useEffect(() => {
         const canvas = canvasRef.current;

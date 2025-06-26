@@ -1,5 +1,8 @@
 // import React from "react";
 
+import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
+
 function Hero() {
     return (
         <section className="py-10 md:py-16">
@@ -7,13 +10,15 @@ function Hero() {
                 <nav className="flex items-center justify-between mb-20">
                     {/* <img src="assets/image/navbar-logo.png" alt="Logo"> */}
                     <div className="bg-white h-12 aspect-square rounded-full"></div>
-
-                    <a
-                        href="/resume/web.pdf"
-                        className="relative inline-block px-7 py-3 md:px-9 md:py-4 bg-white/90 backdrop-blur-lg border border-white/20 ring-1 ring-white/10 text-black font-semibold rounded-md overflow-hidden shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-purple-500/50 hover:ring-purple-400"
-                    >
-                        Get my Resume
-                    </a>
+                    <div className="flex items-center gap-4 md:gap-6">
+                        <Link
+                            href="/resume/web.pdf"
+                            className="relative inline-block px-7 py-3 md:px-9 md:py-4 bg-white/90 backdrop-blur-lg border border-white/20 ring-1 ring-white/10 text-black font-semibold rounded-md overflow-hidden shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-purple-500/50 hover:ring-purple-400"
+                        >
+                            Get my Resume
+                        </Link>
+                        <ThemeToggle />
+                    </div>
                 </nav>
 
                 <div className="text-center">
