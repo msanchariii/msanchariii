@@ -18,16 +18,12 @@
 }
 
 @layer components {
-    * {
-        @apply text-black dark:text-white;
-    }
-
     body {
         @apply overflow-x-hidden bg-white text-black dark:bg-black dark:text-white;
     }
 
     main section {
-        @apply relative z-10 py-10 md:py-16;
+        @apply relative z-10 min-h-dvh py-10 md:py-16;
         h2 {
             @apply font-modern-negra mb-4 text-3xl font-semibold md:text-7xl lg:mb-8 xl:mb-16;
         }
@@ -35,7 +31,7 @@
 
     #hero {
         h1 {
-            @apply font-modern-negra mb-2 text-[10vw] leading-none font-extrabold text-gray-900 uppercase lg:text-[8vw] dark:text-white;
+            @apply font-modern-negra mb-2 text-5xl leading-none font-extrabold text-gray-900 uppercase sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-8xl dark:text-white;
         }
         h2 {
             @apply text-3xl font-normal tracking-widest uppercase md:text-5xl;

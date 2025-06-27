@@ -27,8 +27,8 @@ function About() {
                 trigger: "#about",
                 start: "top 75%",
                 // end: "bottom center",
-                markers: true,
-                toggleActions: "play reverse play reverse",
+                // markers: true,
+                toggleActions: "play none none reverse",
             },
         });
         tl.from("#about h2", {
@@ -40,10 +40,10 @@ function About() {
         tl.from(
             ".bento-animation",
             {
-                duration: 1,
+                duration: 0.8,
                 y: 200,
                 autoAlpha: 0,
-                stagger: 0.25,
+                stagger: 0.15,
             },
             //"<" // "<" means start this animation at the same time as the previous one
         );

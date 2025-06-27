@@ -2,34 +2,24 @@
 import React from "react";
 import gsap from "gsap";
 import {
-    HeroBackground,
+    // HeroBackground,
     About,
     Contact,
-    Education,
-    Experience,
     Footer,
     Hero,
     Projects,
+    Universe,
     Skills,
 } from "@/components";
-import Universe from "@/components/Universe";
 import { UniverseProvider } from "@/contexts/universe";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
-// import GsapProvider from "@/contexts/gsap";
 
-gsap.registerPlugin(
-    SplitText,
-    ScrollTrigger,
-    ScrollSmoother,
-    // MotionPathPlugin,
-    // Draggable,
-    // InertiaPlugin
-);
+gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother);
 
 function HomePage() {
     useGSAP(() => {
-        const scrollSmoother = ScrollSmoother.create({
+        ScrollSmoother.create({
             wrapper: "#smooth-wrapper",
             content: "#smooth-content",
             smooth: 1.5,
@@ -44,14 +34,13 @@ function HomePage() {
             <Universe />
             <div className="" id="smooth-wrapper">
                 <div id="smooth-content">
-                    <main className="relative z-0 mx-auto max-w-(--breakpoint-xl) space-y-16 px-6 text-white md:px-12 xl:space-y-40 2xl:px-24">
+                    <main className="relative z-0 mx-auto max-w-(--breakpoint-xl) space-y-16 px-6 md:px-12 xl:space-y-40 2xl:px-28">
                         <Hero />
                         <About />
-                        {/* <Skills /> */}
-                        {/* <Projects /> */}
+                        <Skills />
+                        <Projects />
                         {/* <Education /> */}
-                        {/* <Experience /> */}
-                        <Contact />
+                        {/* <Contact /> */}
                     </main>
                     <Footer />
                 </div>

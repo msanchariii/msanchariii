@@ -23,43 +23,43 @@ const skills = {
     frontend: [
         {
             name: "React",
-            icon: <FaReact className="inline-block mr-2 text-purple-400" />,
+            icon: <FaReact className="mr-2 inline-block text-purple-400" />,
         },
         {
             name: "HTML5",
-            icon: <FaHtml5 className="inline-block mr-2 text-orange-500" />,
+            icon: <FaHtml5 className="mr-2 inline-block text-orange-500" />,
         },
         {
             name: "CSS3",
-            icon: <FaCss3Alt className="inline-block mr-2 text-blue-500" />,
+            icon: <FaCss3Alt className="mr-2 inline-block text-blue-500" />,
         },
     ],
     backend: [
         {
             name: "Node.js",
-            icon: <FaNodeJs className="inline-block mr-2 text-green-500" />,
+            icon: <FaNodeJs className="mr-2 inline-block text-green-500" />,
         },
         {
             name: "Java",
-            icon: <FaJava className="inline-block mr-2 text-red-600" />,
+            icon: <FaJava className="mr-2 inline-block text-red-600" />,
         },
         {
             name: "Python",
-            icon: <SiPython className="inline-block mr-2 text-yellow-400" />,
+            icon: <SiPython className="mr-2 inline-block text-yellow-400" />,
         },
     ],
     devops: [
         {
             name: "Docker",
-            icon: <FaDocker className="inline-block mr-2 text-blue-600" />,
+            icon: <FaDocker className="mr-2 inline-block text-blue-600" />,
         },
         {
             name: "AWS",
-            icon: <FaAws className="inline-block mr-2 text-orange-400" />,
+            icon: <FaAws className="mr-2 inline-block text-orange-400" />,
         },
         {
             name: "Kubernetes",
-            icon: <SiKubernetes className="inline-block mr-2 text-blue-700" />,
+            icon: <SiKubernetes className="mr-2 inline-block text-blue-700" />,
         },
     ],
 };
@@ -68,6 +68,8 @@ const projects = [
     {
         title: "Rustic Charm",
         image: "/assets/images/rustic-charm.png",
+        tech: ["React", "Tailwind CSS", "JavaScript"],
+        category: "Next.js",
         description:
             "A responsive portfolio built with React and Tailwind CSS to showcase my skills and projects.",
         link: "https://msanchariii.github.io/rustic-charm/",
@@ -76,6 +78,8 @@ const projects = [
     {
         title: "Evolver",
         image: "/assets/images/evolver.png",
+        tech: ["Next.js", "Node.js", "Prisma", "PostgreSQL"],
+        category: "Full Stack",
         description:
             "An Online Exam Portal built with Next.js, Node.js, Prisma and PostgreSQL, featuring user authentication and authorization.",
         link: "https://evolver.vercel.app/",
@@ -84,6 +88,8 @@ const projects = [
     {
         title: "Organa",
         image: "/assets/images/organa.jpg",
+        tech: ["React", "Node.js", "Express", "MongoDB"],
+        category: "Full Stack",
         description:
             "A real time organ matching platform powered by AI. Won 2nd prize in Hackathon organized by GCECT and Bytemonk in 2025.",
         github: "https://github.com/sanchari/blog-platform",

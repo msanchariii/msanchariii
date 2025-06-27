@@ -20,7 +20,10 @@ import {
     SiPrisma,
     SiPython,
     SiTailwindcss,
+    SiTypescript,
 } from "react-icons/si";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const skills = {
     frontend: [
@@ -28,8 +31,8 @@ const skills = {
             name: "HTML5",
             icon: (
                 <FaHtml5
-                    className="inline-block mr-2 text-orange-500"
-                    size={28}
+                    className="mr-2 inline-block text-orange-500"
+                    size={16}
                     strokeWidth={2}
                 />
             ),
@@ -38,8 +41,8 @@ const skills = {
             name: "CSS3",
             icon: (
                 <FaCss3Alt
-                    className="inline-block mr-2 text-blue-500"
-                    size={28}
+                    className="mr-2 inline-block text-blue-500"
+                    size={16}
                     strokeWidth={2}
                 />
             ),
@@ -48,8 +51,8 @@ const skills = {
             name: "Javascript",
             icon: (
                 <SiJavascript
-                    className="inline-block mr-2 text-yellow-500"
-                    size={28}
+                    className="mr-2 inline-block text-yellow-500"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
@@ -58,8 +61,8 @@ const skills = {
             name: "React",
             icon: (
                 <FaReact
-                    className="inline-block mr-2 text-purple-400"
-                    size={28}
+                    className="mr-2 inline-block text-purple-400"
+                    size={16}
                     strokeWidth={2}
                 />
             ),
@@ -68,8 +71,8 @@ const skills = {
             name: "Next.js",
             icon: (
                 <SiNextdotjs
-                    className="inline-block mr-2 text-black"
-                    size={28}
+                    className="mr-2 inline-block text-black"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
@@ -78,8 +81,8 @@ const skills = {
             name: "TailwindCSS",
             icon: (
                 <SiTailwindcss
-                    className="inline-block mr-2 text-sky-400"
-                    size={28}
+                    className="mr-2 inline-block text-sky-400"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
@@ -90,8 +93,8 @@ const skills = {
             name: "Node.js",
             icon: (
                 <FaNodeJs
-                    className="inline-block mr-2 text-green-500"
-                    size={28}
+                    className="mr-2 inline-block text-green-500"
+                    size={16}
                     strokeWidth={2}
                 />
             ),
@@ -100,8 +103,8 @@ const skills = {
             name: "Java",
             icon: (
                 <FaJava
-                    className="inline-block mr-2 text-red-600"
-                    size={28}
+                    className="mr-2 inline-block text-red-600"
+                    size={16}
                     strokeWidth={2}
                 />
             ),
@@ -110,8 +113,8 @@ const skills = {
             name: "Express",
             icon: (
                 <SiExpress
-                    className="inline-block mr-2 text-gray-700"
-                    size={28}
+                    className="mr-2 inline-block text-gray-700"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
@@ -120,8 +123,8 @@ const skills = {
             name: "Prisma",
             icon: (
                 <SiPrisma
-                    className="inline-block mr-2 text-purple-600"
-                    size={28}
+                    className="mr-2 inline-block text-purple-600"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
@@ -130,8 +133,8 @@ const skills = {
             name: "MongoDB",
             icon: (
                 <SiMongodb
-                    className="inline-block mr-2 text-green-700"
-                    size={28}
+                    className="mr-2 inline-block text-green-700"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
@@ -140,8 +143,8 @@ const skills = {
             name: "PostgreSQL",
             icon: (
                 <SiPostgresql
-                    className="inline-block mr-2 text-blue-600"
-                    size={28}
+                    className="mr-2 inline-block text-blue-600"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
@@ -152,8 +155,8 @@ const skills = {
             name: "Docker",
             icon: (
                 <FaDocker
-                    className="inline-block mr-2 text-sky-400"
-                    size={28}
+                    className="mr-2 inline-block text-sky-400"
+                    size={16}
                     strokeWidth={2}
                 />
             ),
@@ -163,7 +166,7 @@ const skills = {
         //     icon: (
         //         <FaAws
         //             className="inline-block mr-2 text-orange-400"
-        //             size={28}
+        //             size={16}
         //             strokeWidth={2}
         //         />
         //     ),
@@ -172,48 +175,109 @@ const skills = {
             name: "Kubernetes",
             icon: (
                 <SiKubernetes
-                    className="inline-block mr-2 text-blue-400"
-                    size={28}
+                    className="mr-2 inline-block text-blue-400"
+                    size={16}
                     strokeWidth={0.5}
                 />
             ),
         },
     ],
 };
-function Skills() {
+
+const SkillBadge = ({ name, icon }) => (
+    <div className="skill-badges flex-center max-h-6 rounded-md border border-red-400 bg-[#f8f8f8] px-3 py-1 text-sm font-medium text-red-400 shadow-sm transition hover:bg-red-400 hover:text-white dark:border-purple-500 dark:bg-[#1e1e2e] dark:text-purple-500 dark:hover:bg-purple-500 dark:hover:text-white">
+        {/* {icon} */}
+        {name}
+    </div>
+);
+
+const TopSkill = ({ children }) => {
     return (
-        <div className="mb-24 max-w-5xl mx-auto px-4">
-            <h3 className="text-3xl font-semibold mb-16 text-center text-white">
-                Skills
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div className="min-h-72 w-full cursor-pointer rounded-full bg-white/5 p-4 ring-2 ring-black/50 backdrop-blur-lg hover:text-red-400 hover:ring-red-400 dark:ring-white/50 dark:hover:text-purple-400 dark:hover:ring-purple-400">
+            {/* <div className="size-full p-4 lg:p-8"> */}
+            {children}
+            {/* </div> */}
+        </div>
+    );
+};
+
+function Skills() {
+    useGSAP(() => {
+        // GSAP animations can be added here if needed
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#skills",
+                start: "top 75%",
+                // markers: true,
+                toggleActions: "play none none reverse",
+            },
+        });
+        tl.from("#skills h2", {
+            duration: 1,
+            y: 200,
+            autoAlpha: 0,
+            stagger: 0.2,
+        });
+        tl.from(
+            "#top-skills > div",
+            {
+                duration: 0.8,
+                y: 200,
+                autoAlpha: 0,
+                stagger: 0.15,
+            },
+            // "<", // "<" means start this animation at the same time as the previous one
+        );
+        tl.from(".skill-section", {
+            duration: 1,
+            y: 200,
+            autoAlpha: 0,
+            stagger: 0.2,
+        });
+    }, []);
+    return (
+        <section id="skills" className="bg-radial">
+            <h2>Skills</h2>
+            {/* top skills - typescript, next.js, express, database */}
+            <div
+                className="mb-6 hidden justify-between gap-16 lg:mb-8 lg:flex"
+                id="top-skills"
+            >
+                <TopSkill>
+                    <SiTypescript className="size-full p-4 lg:p-8" />
+                </TopSkill>
+                <TopSkill>
+                    <SiNextdotjs className="size-full p-4 lg:p-8" />
+                </TopSkill>
+                <TopSkill>
+                    <SiExpress className="size-full p-4 lg:p-8" />
+                </TopSkill>
+                <TopSkill>
+                    <SiMongodb className="size-full p-4 lg:p-8" />
+                </TopSkill>
+            </div>
+            <div className="">
                 {["frontend", "backend", "devops"].map((section) => (
                     <div
                         key={section}
-                        className="bg-white/5 backdrop-blur-lg border border-white/20 ring-1 ring-white/10 rounded-lg shadow-lg p-6"
-                        // initial="hidden"
-                        // whileInView="visible"
-                        // viewport={{ once: false }}
-                        // variants={sectionVariants}
+                        className="skill-section flex justify-between p-6"
                     >
-                        <h4 className="text-xl font-semibold mb-6 text-purple-400 capitalize">
+                        <h4 className="mb-6 text-xl font-semibold capitalize">
                             {section}
                         </h4>
-                        <div className="flex flex-wrap justify-center gap-4">
+                        <div className="flex max-w-sm flex-wrap justify-end gap-4 xl:max-w-lg">
                             {skills[section].map(({ name, icon }) => (
-                                <span
+                                <SkillBadge
                                     key={name}
-                                    className="rounded-full px-2 py-2 text-white font-semibold cursor-default flex items-center gap-1 hover:scale-110 transition duration-300"
-                                >
-                                    {icon}
-                                    {name}
-                                </span>
+                                    name={name}
+                                    icon={icon}
+                                />
                             ))}
                         </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 
