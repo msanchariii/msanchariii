@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Cursor from "@/components/Cursor";
-import StarsBackground from "@/components/StarBackground";
 import { ThemeProvider } from "@/contexts/theme";
+import GsapProvider from "@/contexts/gsap";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,13 +32,15 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" data-theme="light">
             <body className={inter.className}>
+                {/* <GsapProvider> */}
                 <ThemeProvider>
-                    <div className="relative ">
+                    <div className="relative">
                         <Cursor />
-                        <StarsBackground />
+                        {/* <StarsBackground /> */}
                         <main className="relative z-10">{children}</main>
                     </div>
                 </ThemeProvider>
+                {/* </GsapProvider> */}
             </body>
         </html>
     );

@@ -38,7 +38,7 @@ export default function ThemeToggle() {
                 );
                 toggleTheme();
             }}
-            className="px-3 py-1 rounded  flex items-center gap-2 cursor-pointer transition-colors"
+            className="px-3 py-1 rounded-sm  flex items-center gap-2 cursor-pointer transition-colors"
         >
             <span ref={iconRef}>
                 {theme === "light" ? (

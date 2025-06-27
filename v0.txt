@@ -20,28 +20,28 @@ export default function Component() {
                 width={400}
                 height={300}
                 alt="Project Image 1"
-                className="aspect-[4/3] w-full object-cover rounded-lg"
+                className="aspect-4/3 w-full object-cover rounded-lg"
               />
               <img
                 src="/placeholder.svg"
                 width={400}
                 height={300}
                 alt="Project Image 2"
-                className="aspect-[4/3] w-full object-cover rounded-lg"
+                className="aspect-4/3 w-full object-cover rounded-lg"
               />
               <img
                 src="/placeholder.svg"
                 width={400}
                 height={300}
                 alt="Project Image 3"
-                className="aspect-[4/3] w-full object-cover rounded-lg"
+                className="aspect-4/3 w-full object-cover rounded-lg"
               />
               <img
                 src="/placeholder.svg"
                 width={400}
                 height={300}
                 alt="Project Image 4"
-                className="aspect-[4/3] w-full object-cover rounded-lg"
+                className="aspect-4/3 w-full object-cover rounded-lg"
               />
             </div>
           </div>

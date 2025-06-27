@@ -1,8 +1,16 @@
 "use client";
 import { useTheme } from "@/contexts/theme";
+import { useUniverse } from "@/contexts/universe";
+// import { log } from "console";
 import React, { useRef, useEffect } from "react";
 
 export default function Universe() {
+    const { visible } = useUniverse();
+    console.log("Visible:", visible);
+    return visible ? <UniverseCanvas /> : null;
+}
+
+const UniverseCanvas = () => {
     const canvasRef = useRef(null);
     const { theme } = useTheme();
 
@@ -23,6 +31,8 @@ export default function Universe() {
             alpha: Math.random() * 0.5 + 0.5,
         }));
 
+        let animationFrameId;
+
         const animate = () => {
             ctx.clearRect(0, 0, width, height);
             particles.forEach((p) => {
@@ -36,12 +46,19 @@ export default function Universe() {
 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(168, 85, 247, ${p.alpha})`;
-                ctx.shadowColor = "rgba(168, 85, 247, 1)";
+                ctx.fillStyle =
+                    theme === "light"
+                        ? `rgba(239, 68, 68, ${p.alpha})` // red-500
+                        : `rgba(168, 85, 247, ${p.alpha})`; // violet-500
+                ctx.shadowColor =
+                    theme === "light"
+                        ? "rgba(239, 68, 68, 1)"
+                        : "rgba(168, 85, 247, 1)";
                 ctx.shadowBlur = 10;
                 ctx.fill();
             });
-            requestAnimationFrame(animate);
+
+            animationFrameId = requestAnimationFrame(animate);
         };
 
         animate();
@@ -56,14 +73,15 @@ export default function Universe() {
         window.addEventListener("resize", handleResize);
 
         return () => {
+            cancelAnimationFrame(animationFrameId);
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    }, [theme]); // ✅ now theme changes will re-trigger the effect
 
     return (
         <canvas
             ref={canvasRef}
-            className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none"
+            className="pointer-events-none fixed top-0 left-0 z-0 h-full w-full"
         />
     );
-}
+};

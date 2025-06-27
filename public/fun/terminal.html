@@ -562,7 +562,7 @@ Try: cat projects/projectA.md
             cursor.classList.add('hidden-cursor'); // Hide native cursor, rely on input field's cursor
         });
 
-        terminalInput.addEventListener('blur', () => {
+        terminalInput.addEventListener('blur-sm', () => {
             cursor.classList.remove('hidden-cursor'); // Show custom cursor when input loses focus
         });
 

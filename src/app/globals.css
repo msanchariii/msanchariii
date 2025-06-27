@@ -1,35 +1,72 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
-
-/* @import url("https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"); */
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: "Modern Negra";
+    src: url("/Modern Negra Demo.ttf") format("truetype");
+}
+@theme {
+    --font-modern-negra: "Modern Negra", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
+@utility flex-center {
+    @apply flex items-center justify-center;
+}
+
+@utility input {
+    @apply mb-4 w-full rounded-xl border-0 bg-zinc-50 p-3 shadow-sm outline-0 focus:ring-4 lg:mb-8 dark:bg-zinc-950 dark:shadow-zinc-800/50 dark:ring-zinc-800 dark:hover:bg-zinc-800/50 dark:focus:ring-zinc-700;
+}
+
+@layer components {
+    * {
+        @apply text-black dark:text-white;
     }
-}
 
-body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-        )
-        rgb(var(--background-start-rgb));
-}
+    body {
+        @apply overflow-x-hidden bg-white text-black dark:bg-black dark:text-white;
+    }
 
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
+    main section {
+        @apply relative z-10 py-10 md:py-16;
+        h2 {
+            @apply font-modern-negra mb-4 text-3xl font-semibold md:text-7xl lg:mb-8 xl:mb-16;
+        }
+    }
+
+    #hero {
+        h1 {
+            @apply font-modern-negra mb-2 text-[10vw] leading-none font-extrabold text-gray-900 uppercase lg:text-[8vw] dark:text-white;
+        }
+        h2 {
+            @apply text-3xl font-normal tracking-widest uppercase md:text-5xl;
+        }
+        p {
+            @apply mt-8 max-w-5xl text-center text-lg font-normal md:text-xl dark:text-gray-500;
+        }
+    }
+
+    #about {
+        @apply min-h-dvh;
+        #bento {
+            @apply grid grid-cols-1 gap-4 rounded-2xl p-2 lg:grid-cols-4;
+        }
+
+        .socials {
+            @apply flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-zinc-50/80 p-1 shadow-sm hover:text-lime-300 dark:border dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-zinc-800/50;
+        }
+
+        .bento-item {
+            @apply flex-center h-48 w-full flex-col rounded-xl bg-zinc-50/80 p-8 shadow-sm dark:border dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-zinc-800/50;
+        }
+    }
+
+    #contact {
+        input,
+        textarea {
+            @apply w-full;
+        }
+        button {
+            @apply w-full rounded-lg bg-red-400 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-red-500 dark:bg-white dark:text-black dark:hover:bg-red-800;
+        }
     }
 }

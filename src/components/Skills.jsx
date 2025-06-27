@@ -1,6 +1,6 @@
 "use client";
 import { sectionVariants } from "@/data/animation";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import {
     FaReact,
     FaHtml5,
@@ -188,13 +188,13 @@ function Skills() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                 {["frontend", "backend", "devops"].map((section) => (
-                    <motion.div
+                    <div
                         key={section}
                         className="bg-white/5 backdrop-blur-lg border border-white/20 ring-1 ring-white/10 rounded-lg shadow-lg p-6"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: false }}
-                        variants={sectionVariants}
+                        // initial="hidden"
+                        // whileInView="visible"
+                        // viewport={{ once: false }}
+                        // variants={sectionVariants}
                     >
                         <h4 className="text-xl font-semibold mb-6 text-purple-400 capitalize">
                             {section}
@@ -210,7 +210,7 @@ function Skills() {
                                 </span>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </div>

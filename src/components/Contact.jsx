@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function Contact() {
     const [result, setResult] = useState("");
@@ -28,75 +27,65 @@ export default function Contact() {
     };
 
     return (
-        <section className="py-20 max-w-screen-md mx-auto px-6 md:px-12 text-center">
-            <motion.h3
-                className="text-3xl font-bold mb-4 text-white"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                Get In Touch
-            </motion.h3>
+        <section className="" id="contact">
+            <h2>Get In Touch</h2>
 
-            <motion.p
-                className="mb-10 text-gray-400"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            {/* <p className="mb-10 text-gray-400">
                 I’m always open to chatting about new projects, collaborations,
                 or just sharing ideas!
-            </motion.p>
+            </p> */}
 
-            <motion.form
-                onSubmit={onSubmit}
-                className="space-y-6 bg-white/5 p-8 rounded-2xl shadow-xl backdrop-blur-lg border border-white/10 hover:border-purple-500 transition duration-300"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-            >
-                <Input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                />
-                <Input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    required
-                />
-                <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    required
-                    rows="4"
-                    autoComplete="off"
-                    className="w-full px-4 py-3 rounded-lg bg-black/30 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
-                ></textarea>
+            <div className="flex gap-4 lg:gap-6 xl:gap-8">
+                <div className="basis-2/5 lg:basis-2/5">
+                    <h3 className="font-modern-negra mb-2 text-2xl font-bold">
+                        Let’s Build Something Together
+                    </h3>
+                    <p className="mb-6 text-base text-gray-600 dark:text-gray-400">
+                        Whether you’re looking for a developer to collaborate
+                        with, want to discuss an idea, or just want to say hi —
+                        I’m always up for a good tech conversation.
+                    </p>
+                    <p className="mb-6 text-base text-gray-600 dark:text-gray-400">
+                        Open to internships, freelance work, and exciting side
+                        projects.
+                    </p>
+                    <h3 className="font-modern-negra mb-2 text-2xl font-bold">
+                        Say Hello
+                    </h3>
+                    <p className="mb-6 text-base text-gray-600 dark:text-gray-400">
+                        Drop a Email or connect with me on social media.
+                    </p>
+                </div>
 
-                <motion.button
-                    type="submit"
-                    whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 0 20px rgba(168, 85, 247, 0.6)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full px-6 py-3 bg-purple-600 rounded-lg text-white font-semibold hover:bg-purple-500 transition duration-300"
+                <form
+                    onSubmit={onSubmit}
+                    className="flex flex-col lg:basis-3/5"
                 >
-                    Send Message →
-                </motion.button>
-            </motion.form>
+                    <Input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                    />
+                    <Input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                    />
+                    <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        required
+                        rows="4"
+                        autoComplete="off"
+                        className="input"
+                    ></textarea>
 
-            <motion.p
-                className="mt-4 text-sm text-purple-400"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-            >
-                {result}
-            </motion.p>
+                    <button type="submit">Send Message →</button>
+                    <p>{result}</p>
+                </form>
+            </div>
         </section>
     );
 }
@@ -108,6 +97,7 @@ const Input = ({ type, name, placeholder, required }) => (
         placeholder={placeholder}
         required={required}
         autoComplete="off"
-        className="w-full px-4 py-3 rounded-lg bg-black/30 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+        className="input"
+        // className="w-full rounded-lg border px-4 py-3 text-white placeholder-gray-400 transition focus:ring-2 focus:ring-red-400 focus:outline-hidden dark:focus:ring-red-900"
     />
 );

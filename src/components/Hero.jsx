@@ -1,51 +1,76 @@
-// import React from "react";
+"use client";
+import { useGSAP } from "@gsap/react";
+import Nav from "./Nav";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
-import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
+gsap.registerPlugin(SplitText);
 
 function Hero() {
+    useGSAP(() => {
+        const tl = gsap.timeline();
+        const splittingTitle = SplitText.create(".hero-title", {
+            type: "chars",
+        });
+        const splittingSubtitle = SplitText.create(".hero-subtitle", {
+            type: "words",
+        });
+        const splittingHeadline = SplitText.create(".hero-headline", {
+            type: "lines",
+        });
+        tl.from(splittingTitle.chars, {
+            delay: 0.2,
+            duration: 1,
+            y: splittingTitle.chars[0].startY - 70,
+            autoAlpha: 0,
+            stagger: {
+                amount: 0.5,
+                from: "random",
+                grid: "auto",
+            },
+        });
+
+        tl.from(splittingSubtitle.words, {
+            // delay: 0.4,
+            duration: 0.3,
+            y: -70,
+            autoAlpha: 0,
+            stagger: 0.1,
+        });
+
+        // typewriter effect for headline
+        tl.from(".hero-headline", {
+            // delay: 0.4,
+            duration: 0.6,
+            // y: -70,
+            autoAlpha: 0,
+            stagger: {
+                amount: 0.5,
+                from: "start",
+                grid: "auto",
+            },
+        });
+    }, []);
+
     return (
-        <section className="py-10 md:py-16">
-            <div className="container max-w-screen-xl mx-auto px-4">
-                <nav className="flex items-center justify-between mb-20">
-                    {/* <img src="assets/image/navbar-logo.png" alt="Logo"> */}
-                    <div className="bg-white h-12 aspect-square rounded-full"></div>
-                    <div className="flex items-center gap-4 md:gap-6">
-                        <Link
-                            href="/resume/web.pdf"
-                            className="relative inline-block px-7 py-3 md:px-9 md:py-4 bg-white/90 backdrop-blur-lg border border-white/20 ring-1 ring-white/10 text-black font-semibold rounded-md overflow-hidden shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-purple-500/50 hover:ring-purple-400"
-                        >
-                            Get my Resume
-                        </Link>
-                        <ThemeToggle />
-                    </div>
-                </nav>
+        <section id="hero">
+            <div className="container mx-auto w-full px-4">
+                <Nav />
 
-                <div className="text-center">
-                    <div className="flex justify-center mb-16">
+                <div className="flex flex-col justify-center text-center">
+                    <div className="mb-8 flex justify-center">
                         {/* <img src="assets/image/home-img.png" alt="Image"> */}
-                        <div className="bg-white h-36 aspect-square rounded-full"></div>
+                        <div className="aspect-square h-36 rounded-full bg-red-400 shadow-[0_0_40px_rgba(239,68,68,0.5)] transition-all duration-300 dark:bg-purple-400 dark:shadow-[0_0_40px_rgba(168,85,247,0.5)]"></div>
                     </div>
 
-                    <h1
-                        className="font-normal text-gray-900 text-4xl md:text-7xl leading-none mb-8"
-                        style={{
-                            textShadow: "0 0 6px rgba(255, 255, 255, 0.3)",
-                        }}
-                    >
-                        Sanchari Mandal
+                    <h1 className="hero-title">
+                        Sanchari <br className="block sm:hidden" /> Mandal
                     </h1>
-                    <h6 className="font-medium text-gray-600 text-lg md:text-2xl uppercase mb-8">
-                        Web Developer
-                    </h6>
-                    <p className="font-normal text-gray-600 text-md md:text-xl mb-16">
+                    <h2 className="hero-subtitle">Web Developer</h2>
+                    <p className="hero-headline">
                         I have a passion for software. I enjoy creating tools
                         that make life easier for people.
                     </p>
-
-                    {/* <button className="px-7 py-3 md:px-9 md:py-4 font-medium md:font-semibold bg-white/20 text-white text-sm rounded-md hover:bg-gray-50 hover:text-gray-700 transition ease-linear duration-500">
-                        Hire me
-                    </button> */}
                 </div>
             </div>
         </section>
