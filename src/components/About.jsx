@@ -23,6 +23,40 @@ import Image from "next/image";
 function About() {
     useGSAP(() => {
         // GSAP animations can be added here if needed
+        const cards = gsap.utils.toArray(".bento-animation");
+
+        cards.forEach((card) => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateY = ((x - centerX) / centerX) * 10;
+                const rotateX = ((centerY - y) / centerY) * 10;
+
+                gsap.to(card, {
+                    rotationY: rotateY,
+                    rotationX: -rotateX,
+                    scale: 1.03,
+                    duration: 0.3,
+                    ease: "power2.out",
+                    transformPerspective: 1000,
+                    transformOrigin: "center",
+                });
+            });
+
+            card.addEventListener("mouseleave", () => {
+                gsap.to(card, {
+                    rotationX: 0,
+                    rotationY: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: "power3.out",
+                });
+            });
+        });
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#about",
@@ -49,6 +83,7 @@ function About() {
             //"<" // "<" means start this animation at the same time as the previous one
         );
     }, []);
+
     return (
         <section id="about" className="">
             <h2>About Me</h2>
@@ -109,7 +144,7 @@ function About() {
                         <SiDocker className="size-6 md:size-8" />
                     </div>
                 </div>
-                <div className="bento-animation hidden grid-cols-3 gap-4 lg:col-span-2 lg:grid">
+                <div className="hidden grid-cols-3 gap-4 lg:col-span-2 lg:grid">
                     <div className="bento-item bento-animation col-span-2 rounded-2xl"></div>
                     <div className="bento-item bento-animation flex-center col-span-1 rounded-2xl">
                         <ThemeToggle />
