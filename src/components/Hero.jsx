@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import Nav from "./Nav";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import Image from "next/image";
 
 gsap.registerPlugin(SplitText);
 
@@ -60,7 +61,15 @@ function Hero() {
                 <div className="flex flex-col justify-center text-center">
                     <div className="mb-8 flex justify-center">
                         {/* <img src="assets/image/home-img.png" alt="Image"> */}
-                        <div className="aspect-square h-36 rounded-full bg-red-400 shadow-[0_0_40px_rgba(239,68,68,0.5)] transition-all duration-300 dark:bg-purple-400 dark:shadow-[0_0_40px_rgba(168,85,247,0.5)]"></div>
+                        <div className="relative aspect-square h-36 rounded-full bg-red-400 shadow-[0_0_40px_rgba(239,68,68,0.5)] transition-all duration-300 dark:bg-purple-400 dark:shadow-[0_0_40px_rgba(168,85,247,0.5)]">
+                            <Image
+                                src="/assets/cat.webp"
+                                alt="Image"
+                                layout="fill"
+                                objectFit="cover"
+                                className="rounded-full"
+                            />
+                        </div>
                     </div>
 
                     <h1 className="hero-title">

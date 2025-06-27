@@ -18,6 +18,7 @@ import {
 } from "react-icons/si";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Image from "next/image";
 
 function About() {
     useGSAP(() => {
@@ -62,22 +63,24 @@ function About() {
                         beautiful and functional user experiences.
                     </p>
                 </div>
-                <div className="bento-item bento-animation"></div>
-                <div className="grid grid-cols-2 place-items-center gap-4">
+                <div className="bento-item bento-animation aspect-square overflow-hidden bg-[url(/assets/cat.jpg)] bg-cover bg-no-repeat md:aspect-video lg:col-span-1 lg:aspect-auto lg:h-full">
+                    {/* <div className="aspect-square w-full bg-[url(/assets/cat.jpg)] bg-cover bg-no-repeat"></div> */}
+                </div>
+                <div className="grid grid-cols-4 place-items-center gap-4 lg:grid-cols-2">
                     <div className="socials bento-animation">
-                        <SiGmail className="size-6 text-red-500 md:size-8" />
+                        <SiGmail className="size-10 text-red-500 md:size-12 lg:size-8" />
                     </div>
                     <div className="socials bento-animation">
-                        <SiLinkedin className="size-6 text-blue-500 md:size-8" />
+                        <SiLinkedin className="size-10 text-blue-500 md:size-12 lg:size-8" />
                     </div>
                     <div className="socials bento-animation">
-                        <SiGithub className="size-6 text-gray-800 md:size-8" />
+                        <SiGithub className="size-10 text-gray-800 md:size-12 lg:size-8" />
                     </div>
                     <div className="socials bento-animation">
-                        <SiLeetcode className="size-6 text-green-500 md:size-8" />
+                        <SiLeetcode className="size-10 text-green-500 md:size-12 lg:size-8" />
                     </div>
                 </div>
-                <div className="bento-item bento-animation"></div>
+                <div className="bento-item bento-animation hidden lg:block"></div>
                 <div className="bento-item bento-animation flex-center flex-col lg:col-span-2">
                     <h3 className="mb-4 w-full text-left text-sm font-bold text-gray-600 uppercase opacity-80 dark:text-gray-400">
                         Education
@@ -88,7 +91,7 @@ function About() {
                         Information Technology.
                     </p>
                 </div>
-                <div className="bento-item bento-animation"></div>
+                <div className="bento-item bento-animation hidden lg:block"></div>
                 <div className="bento-item bento-animation lg:col-span-2">
                     <h3 className="mb-4 w-full text-left text-sm font-bold text-gray-600 uppercase opacity-80 dark:text-gray-400">
                         My Tech Stack Is
@@ -106,7 +109,7 @@ function About() {
                         <SiDocker className="size-6 md:size-8" />
                     </div>
                 </div>
-                <div className="bento-animation grid grid-cols-3 gap-4 lg:col-span-2">
+                <div className="bento-animation hidden grid-cols-3 gap-4 lg:col-span-2 lg:grid">
                     <div className="bento-item bento-animation col-span-2 rounded-2xl"></div>
                     <div className="bento-item bento-animation flex-center col-span-1 rounded-2xl">
                         <ThemeToggle />

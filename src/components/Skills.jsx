@@ -193,7 +193,7 @@ const SkillBadge = ({ name, icon }) => (
 
 const TopSkill = ({ children }) => {
     return (
-        <div className="min-h-72 w-full cursor-pointer rounded-full bg-white/5 p-4 ring-2 ring-black/50 backdrop-blur-lg hover:text-red-400 hover:ring-red-400 dark:ring-white/50 dark:hover:text-purple-400 dark:hover:ring-purple-400">
+        <div className="min-h-64 w-full cursor-pointer rounded-full bg-white/5 p-4 ring-2 ring-black/50 backdrop-blur-lg hover:text-red-400 hover:ring-red-400 lg:min-h-72 dark:ring-white/50 dark:hover:text-purple-400 dark:hover:ring-purple-400">
             {/* <div className="size-full p-4 lg:p-8"> */}
             {children}
             {/* </div> */}
@@ -230,9 +230,9 @@ function Skills() {
         );
         tl.from(".skill-section", {
             duration: 1,
-            y: 200,
+            y: 150,
             autoAlpha: 0,
-            stagger: 0.2,
+            stagger: 0.15,
         });
     }, []);
     return (
@@ -260,12 +260,12 @@ function Skills() {
                 {["frontend", "backend", "devops"].map((section) => (
                     <div
                         key={section}
-                        className="skill-section flex justify-between p-6"
+                        className="skill-section flex flex-col justify-normal py-6 md:flex-row md:justify-between"
                     >
                         <h4 className="mb-6 text-xl font-semibold capitalize">
                             {section}
                         </h4>
-                        <div className="flex max-w-sm flex-wrap justify-end gap-4 xl:max-w-lg">
+                        <div className="flex max-w-sm flex-wrap gap-4 md:justify-end xl:max-w-lg">
                             {skills[section].map(({ name, icon }) => (
                                 <SkillBadge
                                     key={name}

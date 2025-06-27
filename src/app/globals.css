@@ -25,7 +25,7 @@
     main section {
         @apply relative z-10 min-h-dvh py-10 md:py-16;
         h2 {
-            @apply font-modern-negra mb-4 text-3xl font-semibold md:text-7xl lg:mb-8 xl:mb-16;
+            @apply font-modern-negra mb-4 text-5xl font-semibold md:text-7xl lg:mb-8 xl:mb-16;
         }
     }
 
@@ -34,7 +34,7 @@
             @apply font-modern-negra mb-2 text-5xl leading-none font-extrabold text-gray-900 uppercase sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-8xl dark:text-white;
         }
         h2 {
-            @apply text-3xl font-normal tracking-widest uppercase md:text-5xl;
+            @apply text-5xl font-normal tracking-widest uppercase md:text-5xl;
         }
         p {
             @apply mt-8 max-w-5xl text-center text-lg font-normal md:text-xl dark:text-gray-500;
@@ -48,11 +48,11 @@
         }
 
         .socials {
-            @apply flex h-full w-full cursor-pointer items-center justify-center rounded-xl bg-zinc-50/80 p-1 shadow-sm hover:text-lime-300 dark:border dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-zinc-800/50;
+            @apply flex aspect-square h-full w-full cursor-pointer items-center justify-center rounded-xl bg-zinc-50/80 p-1 shadow-sm hover:text-lime-300 lg:aspect-auto dark:border dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-zinc-800/50;
         }
 
         .bento-item {
-            @apply flex-center h-48 w-full flex-col rounded-xl bg-zinc-50/80 p-8 shadow-sm dark:border dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-zinc-800/50;
+            @apply flex-center w-full flex-col rounded-xl bg-zinc-50/80 p-8 shadow-sm dark:border dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-zinc-800/50;
         }
     }
 
