@@ -43,7 +43,7 @@ function Projects() {
     }, [activeFilter]);
 
     return (
-        <section className="" id="projects">
+        <section id="projects">
             <div className="mb-4 flex flex-row items-center justify-between lg:mb-8 xl:mb-16">
                 <h2 className="my-auto">My Works</h2>
                 <div className="flex gap-4 text-lg font-semibold text-gray-300">

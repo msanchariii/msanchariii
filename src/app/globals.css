@@ -23,7 +23,7 @@
     }
 
     main section {
-        @apply relative z-10 min-h-dvh py-10 md:py-16;
+        @apply relative z-10 my-12 mb-16 min-h-dvh py-10 md:py-16 lg:mb-24 xl:mb-32;
         h2 {
             @apply font-modern-negra mb-4 text-5xl font-semibold md:text-7xl lg:mb-8 xl:mb-16;
         }
@@ -54,6 +54,10 @@
         .bento-item {
             @apply flex-center w-full flex-col rounded-xl bg-zinc-50/80 p-8 shadow-sm dark:border dark:border-zinc-900 dark:bg-zinc-950 dark:shadow-zinc-800/50;
         }
+    }
+
+    #projects {
+        @apply min-h-dvh;
     }
 
     #contact {

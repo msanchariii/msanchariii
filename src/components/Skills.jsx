@@ -222,17 +222,17 @@ function Skills() {
             "#top-skills > div",
             {
                 duration: 0.8,
-                y: 200,
+                y: 100,
                 autoAlpha: 0,
-                stagger: 0.15,
+                stagger: 0.1,
             },
             // "<", // "<" means start this animation at the same time as the previous one
         );
         tl.from(".skill-section", {
             duration: 1,
-            y: 150,
+            y: 100,
             autoAlpha: 0,
-            stagger: 0.15,
+            stagger: 0.1,
         });
     }, []);
     return (
